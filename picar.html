@@ -1,0 +1,100 @@
+﻿<html>
+<head>
+<meta http-equiv="content-type" content="test/html; charset=UTF-8" />
+<title>智能小车控制端</title>
+<script type="text/javascript" src="/jquery.js"></script>
+<script type="text/javascript">
+
+
+function car_forward(){
+  $.ajax({ type: "GET",url: "http://192.168.1.112:8899/car",data: {"a": 1},dataType: "json",cache: "false",success: function(data){},error: function(data){}});
+}
+
+function car_back(){
+  $.ajax({ type: "GET",url: "http://192.168.1.112:8899/car",data: {"a": 2},dataType: "json",cache: "false",success: function(data){},error: function(data){}});
+}
+
+function car_left(){
+  $.ajax({ type: "GET",url: "http://192.168.1.112:8899/car",data: {"a": 3},dataType: "json",cache: "false",success: function(data){},error: function(data){}});
+}
+
+function car_right(){ 
+  $.ajax({ type: "GET",url: "http://192.168.1.112:8899/car",data: {"a": 4},dataType: "json",cache: "false",success: function(data){},error: function(data){}});
+}
+
+function car_stop(){ 
+  $.ajax({ type: "GET",url: "http://192.168.1.112:8899/car",data: {"a": 0},dataType: "json",cache: "false",success: function(data){},error: function(data){}});
+}
+function s_up(){ 
+  $.ajax({ type: "GET",url: "http://192.168.1.112:8899/car",data: {"a": 5},dataType: "json",cache: "false",success: function(data){},error: function(data){}});
+}
+function s_down(){ 
+  $.ajax({ type: "GET",url: "http://192.168.1.112:8899/car",data: {"a": 6},dataType: "json",cache: "false",success: function(data){},error: function(data){}});
+}
+function s_left(){ 
+  $.ajax({ type: "GET",url: "http://192.168.1.112:8899/car",data: {"a": 7},dataType: "json",cache: "false",success: function(data){},error: function(data){}});
+}
+function s_right(){ 
+  $.ajax({ type: "GET",url: "http://192.168.1.112:8899/car",data: {"a": 8},dataType: "json",cache: "false",success: function(data){},error: function(data){}});
+}
+function s_center(){ 
+  $.ajax({ type: "GET",url: "http://192.168.1.112:8899/car",data: {"a": 9},dataType: "json",cache: "false",success: function(data){},error: function(data){}});
+}
+ 
+
+
+$(document).ready(function(){
+$('#forward').click(function(){car_forward();});
+$('#back').click(function(){car_back();});
+$('#front_left_turn').click(function(){car_left();});
+$('#front_right_turn').click(function(){car_right();});
+$('#stop').click(function(){car_stop();});
+$('#s_up').click(function(){s_up();});
+$('#s_down').click(function(){s_down();});
+$('#s_left').click(function(){s_left();});
+$('#s_right').click(function(){s_right();});
+$('#s_center').click(function(){s_center();});
+
+});
+
+$(document).keydown(function(event){ 
+
+ if	(event.keyCode == 87)		{  car_forward(); }
+ else if (event.keyCode == 83)	{ car_back();     } 
+ else if (event.keyCode == 65)	{ car_left(); }
+ else if (event.keyCode == 68 )	{ car_right();}
+ else if (event.keyCode == 69 )	{ car_stop();}
+
+ else if (event.keyCode == 38)	{ s_up();     } 
+ else if (event.keyCode == 40)	{ s_down(); }
+ else if (event.keyCode == 37 )	{ s_left();}
+ else if (event.keyCode == 39)	{ s_right();}
+ else if (event.keyCode == 76)	{ s_center();}
+ 
+ 
+}); 
+
+ 
+
+</script>
+</head>
+<body>
+<button id="forward" name="forward">前进</button>
+<button id="back" name="back">后退</button>
+<button id="front_left_turn" name="front_left_turn">左前拐</button>
+<button id="front_right_turn" name="front_right_turn">右前拐</button>
+<button id="stop" name="stop">停止</button>
+<br>
+<button id="s_up" name="s_down">向上</button>
+<button id="s_down" name="s_down">向下</button>
+<button id="s_left" name="s_left">向左</button>
+<button id="s_right" name="s_right">向右</button>
+<button id="s_center" name="s_center">居中</button>
+<br>
+<div style="width:640px;height:480px;margin:0 auto;">
+<iframe frameborder=0 width=640 height=480 marginheight=0 marginwidth=0 scrolling=no src="http://192.168.1.112:8080/?action=stream">
+</iframe>
+</div>
+
+</body>
+</html>
