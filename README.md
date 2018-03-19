@@ -1,4 +1,4 @@
-# PiCar 树莓派小车
+# PiCar 
 # 安装  pigpio 
 $ sudo apt-get install pigpio python-pigpio
 # 配置  pigpiod 自启动 
