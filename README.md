@@ -1,10 +1,10 @@
 # PiCar 
-# 安装  pigpio 
+## 安装  pigpio 
 $ sudo apt-get install pigpio python-pigpio
-# 配置  pigpiod 自启动 
+## 配置  pigpiod 自启动 
 $ sudo crontab -e
         @reboot pigpiod &
-# 配置 GPIO PIN 
+## 配置 GPIO PIN 
 L298N MOTOR PIN (GPIO.BOARD) 
 IN1 = 11
 IN2 = 12
